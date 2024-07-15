@@ -3,9 +3,11 @@ import { auth } from "./auth/resource";
 import { data } from "./data/resource";
 
 const backend=defineBackend({
-  auth,
-  data,
+  // auth,
+   data,
 });
+
+console.log('Adding backend output...');
 
 backend.addOutput({
   auth: {
@@ -16,7 +18,8 @@ backend.addOutput({
     username_attributes: ["email"],
     standard_required_attributes: ["email"],
     user_verification_types: ["email"],
-    //unauthenticated_identities_enabled: true,
+    
+    unauthenticated_identities_enabled: true,
     // password_policy: {
     //   min_length: 8,
     //   require_lowercase: true,
